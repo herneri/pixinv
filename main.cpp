@@ -1,7 +1,9 @@
 #include <iostream>
 #include <raylib.h>
-#include "constants.hpp"
+
+#include "laser.hpp"
 #include "player.hpp"
+#include "constants.hpp"
 
 int main() {
 	Player p1 = Player();
@@ -14,11 +16,16 @@ int main() {
 			p1.x += p1.speed;
 		} else if (IsKeyDown(KEY_LEFT)) {
 			p1.x -= p1.speed;
+		} else if (IsKeyDown(KEY_SPACE)) {
+			p1.shoot();
 		}
 
 		BeginDrawing();
 		ClearBackground(BLACK);
+
 		DrawCircle(p1.x, p1.y, p1.radius, WHITE);
+		Laser::draw_lasers();
+
 		EndDrawing();
 	}
 

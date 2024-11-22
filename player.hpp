@@ -3,6 +3,7 @@
 
 #include <raylib.h>
 #include "constants.hpp"
+#include "laser.hpp"
 
 class Player {
 public:
@@ -19,6 +20,16 @@ public:
 		this->speed = 5;
 		this->radius = 20;
 		this->color = WHITE;
+	}
+
+	void shoot(void) {
+		if (Laser::lasers.size() > 10) {
+			return;
+		}
+
+		Laser *new_laser = new Laser(this->x, this->y - 50);
+		Laser::lasers.push_back(new_laser);
+		return;
 	}
 };
 
