@@ -3,10 +3,12 @@
 
 #include "laser.hpp"
 #include "player.hpp"
+#include "enemy.hpp"
 #include "constants.hpp"
 
 int main() {
 	Player p1 = Player();
+	Enemy::enemy_grid_init();
 
 	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, PROGRAM_NAME);
 	SetTargetFPS(60);
@@ -24,6 +26,7 @@ int main() {
 		ClearBackground(BLACK);
 
 		DrawCircle(p1.x, p1.y, p1.radius, WHITE);
+		Enemy::draw_enemies();
 		Laser::draw_lasers();
 
 		EndDrawing();
