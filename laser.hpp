@@ -1,7 +1,9 @@
 #ifndef PIXINV_LASER_H
 #define PIXINV_LASER_H
 
+#include <raylib.h>
 #include <vector>
+#include <string>
 #include "constants.hpp"
 
 class Laser {
@@ -10,14 +12,16 @@ private:
 	int length;
 
 public:
-	int x;
-	int y;
+	Vector2 posistion;
 
 	static std::vector<Laser *> lasers;
 
-	Laser(int x, int y) {
-		this->x = x;
-		this->y = y;
+	std::string shooter;
+
+	Laser(int x, int y, std::string shooter) {
+		this->posistion.x = x;
+		this->posistion.y = y;
+		this->shooter = shooter;
 		this->width = 5;
 		this->length = 15;
 	}
@@ -28,13 +32,13 @@ public:
 		for (int i = 0; i < length; i++) {
 			Laser *laser = lasers[i];
 
-			if (laser->y <= 0) {
+			if (laser->posistion.y <= 0) {
 				lasers.erase(lasers.begin() + i);
 				continue;
 			}
 
-			laser->y -= 10;
-			DrawRectangle(laser->x, laser->y, laser->width, laser->length, RED);
+			laser->posistion.y -= 10;
+			DrawRectangle(laser->posistion.x, laser->posistion.y, laser->width, laser->length, RED);
 		}
 	}
 };

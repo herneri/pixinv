@@ -1,6 +1,7 @@
 #ifndef PIXINV_ENEMY_H
 #define PIXINV_ENEMY_H
 
+#include <raylib.h>
 #include <queue>
 #include "constants.hpp"
 
@@ -26,15 +27,14 @@ class Enemy {
 private:
 	float radius;
 public:
-	int x;
-	int y;
+	Vector2 posistion;
 
 	static Enemy *enemy_grid[ROWS][COLUMNS];
 	static std::queue<struct enemy_index *> dead_enemy_indexes;
 
 	Enemy(int x, int y) {
-		this->x = x;
-		this->y = y;
+		this->posistion.x = x;
+		this->posistion.y = y;
 		this->radius = 20;
 	}
 
@@ -55,7 +55,7 @@ public:
 				if (current_enemy == nullptr)
 					continue;
 
-				DrawCircle(current_enemy->x, current_enemy->y, current_enemy->radius, GREEN);
+				DrawCircle(current_enemy->posistion.x, current_enemy->posistion.y, current_enemy->radius, GREEN);
 			}
 		}
 

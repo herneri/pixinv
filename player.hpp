@@ -7,16 +7,15 @@
 
 class Player {
 public:
-	int x;
-	int y;
+	Vector2 posistion;
 	int speed;
 
 	float radius;
 	Color color;
 
 	Player() {
-		this->x = SCREEN_WIDTH / 2;
-		this->y = SCREEN_HEIGHT - (SCREEN_HEIGHT / (SCREEN_HEIGHT / 100));
+		this->posistion.x = SCREEN_WIDTH / 2;
+		this->posistion.y = SCREEN_HEIGHT - (SCREEN_HEIGHT / (SCREEN_HEIGHT / 100));
 		this->speed = 5;
 		this->radius = 20;
 		this->color = WHITE;
@@ -27,7 +26,7 @@ public:
 			return;
 		}
 
-		Laser *new_laser = new Laser(this->x, this->y - 50);
+		Laser *new_laser = new Laser(this->posistion.x, this->posistion.y - 50, "Player");
 		Laser::lasers.push_back(new_laser);
 		return;
 	}
