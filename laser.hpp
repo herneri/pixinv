@@ -16,12 +16,12 @@ public:
 
 	static std::vector<Laser *> lasers;
 
-	std::string shooter;
+	bool is_shooter_player;
 
-	Laser(int x, int y, std::string shooter) {
+	Laser(int x, int y, bool is_shooter_player) {
 		this->posistion.x = x;
 		this->posistion.y = y;
-		this->shooter = shooter;
+		this->is_shooter_player = is_shooter_player;
 		this->width = 5;
 		this->length = 15;
 	}
