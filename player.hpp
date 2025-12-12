@@ -26,7 +26,7 @@ public:
 			return;
 		}
 
-		Laser *new_laser = new Laser(this->posistion.x, this->posistion.y - 50, "Player");
+		Laser *new_laser = new Laser(this->posistion.x, this->posistion.y - 50, true);
 		Laser::lasers.push_back(new_laser);
 		return;
 	}
