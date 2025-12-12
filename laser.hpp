@@ -27,9 +27,11 @@ public:
 	}
 
 	static void draw_lasers() {
-		int length = lasers.size();
-
-		for (int i = 0; i < length; i++) {
+		/*
+		**	The lasers vector can change in size here,
+		**	so always loop with the current size.
+		*/
+		for (int i = 0; i < lasers.size(); i++) {
 			Laser *laser = lasers[i];
 
 			if (laser->posistion.y <= 0) {
