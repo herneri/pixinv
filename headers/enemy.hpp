@@ -1,0 +1,38 @@
+#ifndef PIXINV_ENEMY_H
+#define PIXINV_ENEMY_H
+
+#include <queue>
+#include "constants.hpp"
+
+const int ROWS = 3;
+const int COLUMNS = 4;
+
+struct enemy_index {
+	int row;
+	int column;
+};
+
+const int enemy_x_posistion[] {
+	SCREEN_WIDTH - 650, SCREEN_WIDTH - 475,
+	SCREEN_WIDTH - 300, SCREEN_WIDTH - 150
+};
+
+const int enemy_y_posistion[] {
+	SCREEN_HEIGHT / 12, SCREEN_HEIGHT / 6,
+	SCREEN_HEIGHT / 4
+};
+
+class Enemy {
+private:
+	float radius;
+
+public:
+	Vector2 posistion;
+
+	Enemy(int x, int y);
+};
+
+void enemy_grid_init(void);
+void draw_enemies(void);
+
+#endif /* PIXINV_ENEMY_H */

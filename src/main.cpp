@@ -1,14 +1,14 @@
 #include <iostream>
 #include <raylib.h>
 
-#include "laser.hpp"
-#include "player.hpp"
-#include "enemy.hpp"
-#include "constants.hpp"
+#include "../headers/laser.hpp"
+#include "../headers/player.hpp"
+#include "../headers/enemy.hpp"
+#include "../headers/constants.hpp"
 
 int main() {
 	Player p1 = Player();
-	Enemy::enemy_grid_init();
+	enemy_grid_init();
 
 	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, PROGRAM_NAME);
 	SetTargetFPS(60);
@@ -26,8 +26,8 @@ int main() {
 		ClearBackground(BLACK);
 
 		DrawCircle(p1.posistion.x, p1.posistion.y, p1.radius, WHITE);
-		Enemy::draw_enemies();
-		Laser::draw_lasers();
+		draw_enemies();
+		draw_lasers();
 
 		EndDrawing();
 	}

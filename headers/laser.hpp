@@ -1,0 +1,21 @@
+#ifndef PIXINV_LASER_H
+#define PIXINV_LASER_H
+
+#include <vector>
+
+class Laser {
+private:
+	int width;
+	int length;
+
+public:
+	Vector2 posistion;
+
+	bool is_shooter_player;
+
+	Laser(int x, int y, bool is_shooter_player);
+};
+
+void draw_lasers();
+
+#endif /* PIXINV_LASER_H */
