@@ -15,6 +15,7 @@ public:
 
 	Laser(int x, int y, bool is_shooter_player);
 
+	int get_width(void);
 	int get_length(void);
 };
 

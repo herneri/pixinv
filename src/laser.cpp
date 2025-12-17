@@ -16,6 +16,10 @@ Laser::Laser(int x, int y, bool is_shooter_player) {
 	this->length = 15;
 }
 
+int Laser::get_width(void) {
+	return this->width;
+}
+
 int Laser::get_length(void) {
 	return this->length;
 }
