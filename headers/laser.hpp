@@ -19,6 +19,6 @@ public:
 	int get_length(void);
 };
 
-void draw_lasers();
+void draw_lasers(std::vector<Laser *> &lasers);
 
 #endif /* PIXINV_LASER_H */

@@ -9,6 +9,7 @@
 int main() {
 	Player p1 = Player();
 	enemy_grid_init();
+	std::vector<Laser *> lasers;
 
 	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, PROGRAM_NAME);
 	SetTargetFPS(60);
@@ -27,7 +28,7 @@ int main() {
 
 		DrawCircle(p1.posistion.x, p1.posistion.y, p1.radius, WHITE);
 		draw_enemies();
-		draw_lasers();
+		draw_lasers(lasers);
 
 		EndDrawing();
 	}

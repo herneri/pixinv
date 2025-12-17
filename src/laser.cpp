@@ -6,8 +6,6 @@
 #include "../headers/laser.hpp"
 #include "../headers/constants.hpp"
 
-std::vector<Laser *> lasers;
-
 Laser::Laser(int x, int y, bool is_shooter_player) {
 	this->posistion.x = x;
 	this->posistion.y = y;
@@ -24,7 +22,7 @@ int Laser::get_length(void) {
 	return this->length;
 }
 
-void draw_lasers() {
+void draw_lasers(std::vector<Laser *> &lasers) {
 	/*
 	**	The lasers vector can change in size here,
 	**	so always loop with the current size.
