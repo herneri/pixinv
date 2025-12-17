@@ -1,4 +1,5 @@
 #include <raylib.h>
+#include <vector>
 
 #include "../headers/player.hpp"
 #include "../headers/constants.hpp"
@@ -12,7 +13,7 @@ Player::Player() {
 	this->color = WHITE;
 }
 
-void Player::shoot(void) {
+void Player::shoot(std::vector<Laser *> &lasers) {
 	if (lasers.size() > 10) {
 			return;
 	}

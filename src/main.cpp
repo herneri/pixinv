@@ -20,7 +20,7 @@ int main() {
 		} else if (IsKeyDown(KEY_LEFT)) {
 			p1.posistion.x -= p1.speed;
 		} else if (IsKeyDown(KEY_SPACE)) {
-			p1.shoot();
+			p1.shoot(lasers);
 		}
 
 		BeginDrawing();
