@@ -16,6 +16,10 @@ Laser::Laser(int x, int y, bool is_shooter_player) {
 	this->length = 15;
 }
 
+int Laser::get_length(void) {
+	return this->length;
+}
+
 void draw_lasers() {
 	/*
 	**	The lasers vector can change in size here,

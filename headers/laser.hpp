@@ -14,6 +14,8 @@ public:
 	bool is_shooter_player;
 
 	Laser(int x, int y, bool is_shooter_player);
+
+	int get_length(void);
 };
 
 void draw_lasers();
