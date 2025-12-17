@@ -30,6 +30,8 @@ public:
 	Vector2 posistion;
 
 	Enemy(int x, int y);
+
+	float get_radius(void);
 };
 
 void enemy_grid_init(void);

@@ -13,6 +13,10 @@ Enemy::Enemy(int x, int y) {
 	this->radius = 20;
 }
 
+float Enemy::get_radius(void) {
+	return this->radius;
+}
+
 void enemy_grid_init(void) {
 	for (int i = 0; i < ROWS; i++) {
 		for (int j = 0; j < COLUMNS; j++) {
