@@ -38,6 +38,6 @@ void draw_lasers() {
 		}
 
 		laser->posistion.y -= 10;
-		DrawRectangle(laser->posistion.x, laser->posistion.y, laser->width, laser->length, RED);
+		DrawRectangle(laser->posistion.x, laser->posistion.y, laser->get_width(), laser->get_length(), RED);
 	}
 }
