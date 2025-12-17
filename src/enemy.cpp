@@ -34,7 +34,7 @@ void draw_enemies(void) {
 			if (current_enemy == nullptr)
 				continue;
 
-			DrawCircle(current_enemy->posistion.x, current_enemy->posistion.y, current_enemy->radius, GREEN);
+			DrawCircle(current_enemy->posistion.x, current_enemy->posistion.y, current_enemy->get_radius(), GREEN);
 		}
 	}
 
