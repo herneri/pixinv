@@ -14,6 +14,8 @@ private:
 public:
 	Player();
 
+	const int get_radius(void) const;
+
 	void shoot(std::vector<Laser *> &lasers) const;
 };
 

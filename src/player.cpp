@@ -13,6 +13,10 @@ Player::Player() {
 	this->color = WHITE;
 }
 
+const int Player::get_radius(void) const {
+	return this->radius;
+}
+
 void Player::shoot(std::vector<Laser *> &lasers) const {
 	if (lasers.size() > 10) {
 			return;
