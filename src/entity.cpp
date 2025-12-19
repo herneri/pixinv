@@ -47,6 +47,7 @@ void Entity::shoot(std::vector<Laser> &lasers, const int laser_count_threshold, 
 		return;
 	}
 
-	lasers.push_back(Laser(this->posistion.x, this->posistion.y - 50, is_player));
+	int laser_y = (is_player == true) ? this->posistion.y - 50 : this->posistion.y + 50;
+	lasers.push_back(Laser(this->posistion.x, laser_y, is_player));
 	return;
 }

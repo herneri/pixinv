@@ -30,12 +30,22 @@ void draw_lasers(std::vector<Laser> &lasers) {
 	for (int i = 0; i < lasers.size(); i++) {
 		Laser &laser = lasers[i];
 
-		if (laser.posistion.y <= 0) {
-			lasers.erase(lasers.begin() + i);
-			continue;
+		if (laser.is_shooter_player == false) {
+			if (laser.posistion.y >= 800) {
+				lasers.erase(lasers.begin() + i);
+				continue;
+			}
+
+			laser.posistion.y += 10;
+		} else {
+			if (laser.posistion.y <= 0) {
+				lasers.erase(lasers.begin() + i);
+				continue;
+			}
+
+			laser.posistion.y -= 10;
 		}
 
-		laser.posistion.y -= 10;
 		DrawRectangle(laser.posistion.x, laser.posistion.y, laser.get_width(), laser.get_length(), RED);
 	}
 }
