@@ -1,4 +1,6 @@
 #include <raylib.h>
+#include <ctime>
+#include <cstdlib>
 #include <queue>
 
 #include "../headers/entity.hpp"
@@ -42,5 +44,18 @@ void draw_enemies(void) {
 		}
 	}
 
+	return;
+}
+
+void random_enemy_shoot(std::vector<Laser> &lasers) {
+	if (lasers.size() > 15) {
+		return;
+	}
+
+	srand(time(0));
+	int random_i = rand() % ROWS;
+	int random_j = rand() % COLUMNS;
+
+	enemy_grid[random_i][random_j]->shoot(lasers, 15, false);
 	return;
 }

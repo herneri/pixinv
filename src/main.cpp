@@ -30,6 +30,7 @@ int main() {
 
 		DrawCircle(p1_vector.x, p1_vector.y, p1.get_radius(), WHITE);
 		draw_enemies();
+		random_enemy_shoot(lasers);
 		draw_lasers(lasers);
 
 		EndDrawing();

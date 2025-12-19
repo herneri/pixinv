@@ -34,5 +34,6 @@ public:
 
 void enemy_grid_init(void);
 void draw_enemies(void);
+void random_enemy_shoot(std::vector<Laser> &lasers);
 
 #endif /* PIXINV_ENEMY_H */
