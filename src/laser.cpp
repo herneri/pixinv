@@ -22,8 +22,6 @@ int Laser::get_length(void) {
 	return this->length;
 }
 
-#include <iostream>
-using namespace std;
 void draw_lasers(std::vector<Laser> &lasers) {
 	/*
 	**	The lasers vector can change in size here,
