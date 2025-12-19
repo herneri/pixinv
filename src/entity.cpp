@@ -42,11 +42,11 @@ void Entity::move_right(void) {
 	return;
 }
 
-void Entity::shoot(std::vector<Laser *> &lasers, const int laser_count_threshold, const bool is_player) const {
+void Entity::shoot(std::vector<Laser> &lasers, const int laser_count_threshold, const bool is_player) const {
 	if (lasers.size() > laser_count_threshold) {
 		return;
 	}
 
-	lasers.push_back(new Laser(this->posistion.x, this->posistion.y - 50, is_player));
+	lasers.push_back(Laser(this->posistion.x, this->posistion.y - 50, is_player));
 	return;
 }

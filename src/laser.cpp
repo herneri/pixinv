@@ -22,20 +22,22 @@ int Laser::get_length(void) {
 	return this->length;
 }
 
-void draw_lasers(std::vector<Laser *> &lasers) {
+#include <iostream>
+using namespace std;
+void draw_lasers(std::vector<Laser> &lasers) {
 	/*
 	**	The lasers vector can change in size here,
 	**	so always loop with the current size.
 	*/
 	for (int i = 0; i < lasers.size(); i++) {
-		Laser *laser = lasers[i];
+		Laser &laser = lasers[i];
 
-		if (laser->posistion.y <= 0) {
+		if (laser.posistion.y <= 0) {
 			lasers.erase(lasers.begin() + i);
 			continue;
 		}
 
-		laser->posistion.y -= 10;
-		DrawRectangle(laser->posistion.x, laser->posistion.y, laser->get_width(), laser->get_length(), RED);
+		laser.posistion.y -= 10;
+		DrawRectangle(laser.posistion.x, laser.posistion.y, laser.get_width(), laser.get_length(), RED);
 	}
 }

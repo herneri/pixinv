@@ -9,7 +9,7 @@
 int main() {
 	Player p1 = Player();
 	enemy_grid_init();
-	std::vector<Laser *> lasers;
+	std::vector<Laser> lasers;
 
 	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, PROGRAM_NAME);
 	SetTargetFPS(60);
