@@ -15,10 +15,12 @@ int main() {
 	SetTargetFPS(60);
 
 	while (WindowShouldClose() == false) {
+		Vector2 p1_vector = p1.get_posistion();
+
 		if (IsKeyDown(KEY_RIGHT)) {
-			p1.posistion.x += p1.speed;
+			p1.move_right();
 		} else if (IsKeyDown(KEY_LEFT)) {
-			p1.posistion.x -= p1.speed;
+			p1.move_left();
 		} else if (IsKeyDown(KEY_SPACE)) {
 			p1.shoot(lasers);
 		}
@@ -26,7 +28,7 @@ int main() {
 		BeginDrawing();
 		ClearBackground(BLACK);
 
-		DrawCircle(p1.posistion.x, p1.posistion.y, p1.radius, WHITE);
+		DrawCircle(p1_vector.x, p1_vector.y, p1.get_radius(), WHITE);
 		draw_enemies();
 		draw_lasers(lasers);
 
