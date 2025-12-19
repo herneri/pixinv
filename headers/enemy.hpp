@@ -30,8 +30,6 @@ public:
 	Enemy(int x, int y);
 
 	float get_radius(void);
-
-	void shoot(std::vector<Laser *> &lasers) const;
 };
 
 void enemy_grid_init(void);

@@ -22,7 +22,7 @@ int main() {
 		} else if (IsKeyDown(KEY_LEFT)) {
 			p1.move_left();
 		} else if (IsKeyDown(KEY_SPACE)) {
-			p1.shoot(lasers);
+			p1.shoot(lasers, 10, true);
 		}
 
 		BeginDrawing();

@@ -34,7 +34,7 @@ public:
 	void move_left(void);
 	void move_right(void);
 
-	virtual void shoot(std::vector<Laser *> &lasers) const = 0;
+	void shoot(std::vector<Laser *> &lasers, const int laser_count_threshold, const bool is_player) const;
 };
 
 #endif /* PIXINV_ENTITY_H */

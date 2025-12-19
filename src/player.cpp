@@ -16,15 +16,3 @@ Player::Player() {
 const int Player::get_radius(void) const {
 	return this->radius;
 }
-
-void Player::shoot(std::vector<Laser *> &lasers) const {
-	if (lasers.size() > 10) {
-			return;
-	}
-
-	const Vector2 &player_posistion = this->get_posistion();
-
-	Laser *new_laser = new Laser(player_posistion.x, player_posistion.y - 50, true);
-	lasers.push_back(new_laser);
-	return;
-}
