@@ -22,16 +22,16 @@ const int enemy_y_posistion[] {
 	SCREEN_HEIGHT / 4
 };
 
-class Enemy {
+class Enemy : public Entity {
 private:
 	float radius;
 
 public:
-	Vector2 posistion;
-
 	Enemy(int x, int y);
 
 	float get_radius(void);
+
+	void shoot(std::vector<Laser *> &lasers) const;
 };
 
 void enemy_grid_init(void);

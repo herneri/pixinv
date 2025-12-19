@@ -6,19 +6,21 @@
 #include "../headers/laser.hpp"
 
 Player::Player() {
-	this->posistion.x = SCREEN_WIDTH / 2;
-	this->posistion.y = SCREEN_HEIGHT - (SCREEN_HEIGHT / (SCREEN_HEIGHT / 100));
-	this->speed = 5;
+	this->set_x(SCREEN_WIDTH / 2);
+	this->set_y(SCREEN_HEIGHT - (SCREEN_HEIGHT / (SCREEN_HEIGHT / 100)));
+	this->set_speed(5);
 	this->radius = 20;
 	this->color = WHITE;
 }
 
-void Player::shoot(std::vector<Laser *> &lasers) {
+void Player::shoot(std::vector<Laser *> &lasers) const {
 	if (lasers.size() > 10) {
 			return;
 	}
 
-	Laser *new_laser = new Laser(this->posistion.x, this->posistion.y - 50, true);
+	const Vector2 &player_posistion = this->get_posistion();
+
+	Laser *new_laser = new Laser(player_posistion.x, player_posistion.y - 50, true);
 	lasers.push_back(new_laser);
 	return;
 }

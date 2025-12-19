@@ -3,19 +3,18 @@
 
 #include <vector>
 
+#include "entity.hpp"
 #include "laser.hpp"
 
-class Player {
-public:
-	Vector2 posistion;
-	int speed;
-
+class Player : public Entity {
+private:
 	float radius;
 	Color color;
 
+public:
 	Player();
 
-	void shoot(std::vector<Laser *> &lasers);
+	void shoot(std::vector<Laser *> &lasers) const;
 };
 
 #endif /* PIXINV_PLAYER_H */
